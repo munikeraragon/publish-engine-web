@@ -1,6 +1,6 @@
 import MDEditor from '@uiw/react-md-editor';
-import '@uiw/react-md-editor/dist/markdown-editor.css';
-import '@uiw/react-markdown-preview/dist/markdown.css';
+// import '@uiw/react-md-editor/dist/markdown-editor.css';
+// import '@uiw/react-markdown-preview/dist/markdown.css';
 
 export interface EskeletonProps {
     className?: string;

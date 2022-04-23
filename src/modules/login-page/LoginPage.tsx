@@ -18,7 +18,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
     const serverAddress = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
     const buttons = [
         {
-            href: serverAddress + '/auth/google',
+            href: serverAddress + '/authenticate/google',
             label: 'Log in with Google',
             icon: (
                 <svg

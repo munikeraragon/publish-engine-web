@@ -1,0 +1,8 @@
+# Ignore artifacts:
+.cache
+next-env.d.ts
+node_modules
+package.json
+package-lock.json
+public
+.next

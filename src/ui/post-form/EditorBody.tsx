@@ -1,8 +1,8 @@
 import { Toolbar } from './Toolbar';
 import MDEditor from '@uiw/react-md-editor';
 import { useFormStore } from './useFormStore';
-import '@uiw/react-md-editor/dist/markdown-editor.css';
-import '@uiw/react-markdown-preview/dist/markdown.css';
+// import '@uiw/react-md-editor/dist/markdown-editor.css';
+// import '@uiw/react-markdown-preview/dist/markdown.css';
 import { useEffect, useRef } from 'react';
 
 export const EditorBody = () => {
