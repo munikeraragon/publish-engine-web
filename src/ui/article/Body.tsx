@@ -1,6 +1,16 @@
-import MDEditor from '@uiw/react-md-editor';
+// import  MDEditor from '@uiw/react-md-editor';
+import dynamic from 'next/dynamic';
 // import '@uiw/react-md-editor/dist/markdown-editor.css';
 // import '@uiw/react-markdown-preview/dist/markdown.css';
+
+const MDEditor = dynamic(() => import('@uiw/react-md-editor').then((mod) => mod.default) as any, {
+    ssr: false
+}) as any
+
+const Markdown = dynamic(
+    () => import('@uiw/react-markdown-preview').then((mod) => mod.default) as any,
+    { ssr: false }
+) as any
 
 export interface EskeletonProps {
     className?: string;
@@ -16,7 +26,7 @@ export const Body: React.FC<BodyProps> = ({ articleBody, className = '' }) => {
 
     return (
         <div className={className}>
-            <MDEditor.Markdown source={articleBody} className='py-4' />
+            <Markdown source={articleBody} className='py-4' />
         </div>
     );
 };

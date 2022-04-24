@@ -11,7 +11,7 @@ export const LandingImage: React.FC<LandingImageProps> = ({ className = '', src,
         <div
             className={`flex flex-col justify-center ${className}`}
             style={{ position: 'relative', height: '400px' }}>
-            <Image placeholder='blur' src={src || ''} alt={alt} layout='fill' objectFit='contain' />
+            <Image src={src || ''} alt={alt} layout='fill' objectFit='contain' />
         </div>
     );
 };

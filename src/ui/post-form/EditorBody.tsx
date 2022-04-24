@@ -1,9 +1,21 @@
 import { Toolbar } from './Toolbar';
-import MDEditor from '@uiw/react-md-editor';
+// import MDEditor from '@uiw/react-md-editor';
 import { useFormStore } from './useFormStore';
 // import '@uiw/react-md-editor/dist/markdown-editor.css';
 // import '@uiw/react-markdown-preview/dist/markdown.css';
 import { useEffect, useRef } from 'react';
+
+import dynamic from 'next/dynamic';
+
+const MDEditor = dynamic(() => import('@uiw/react-md-editor').then((mod) => mod.default) as any, {
+    ssr: false
+}) as any
+
+const Markdown = dynamic(
+    () => import('@uiw/react-markdown-preview').then((mod) => mod.default) as any,
+    { ssr: false }
+) as any
+
 
 export const EditorBody = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -45,7 +57,7 @@ export const EditorBody = () => {
                 value={mainBody}
                 preview='edit'
                 hideToolbar={true}
-                onChange={(body) => {
+                onChange={(body: any) => {
                     console.log('changing body');
                     setMainBody(body || '');
                 }}

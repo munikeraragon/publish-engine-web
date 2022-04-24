@@ -1,8 +1,10 @@
 import Particles from 'react-tsparticles';
 
+const TsParticles = Particles as any;
+
 export const ReactParticles: React.FC = () => {
     return (
-        <Particles
+        <TsParticles
             className='absolute top-0 w-full'
             style={{ minHeight: '100vh' }}
             id='tsparticles'
